@@ -9,18 +9,10 @@ variable "region-main" {
   default = "us-east-1"
 }
 
-variable "workers-count" {
-  type    = number
-  default = 1
-}
-
 variable "instance-type" {
-  type    = string
-  default = "t3.micro"
+  type = string
 }
 
 variable "instance-count" {
-  type    = number
-  default = 1
-
+  type = number
 }

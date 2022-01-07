@@ -1,6 +1,5 @@
-# Create and bootstrap EC2 in us-east-1
 resource "aws_instance" "EC2" {
-  provider                    = aws.region-main
+  #provider                    = aws.region-main
   count                       = var.instance-count
   ami                         = data.aws_ssm_parameter.linuxAmi.value
   instance_type               = var.instance-type

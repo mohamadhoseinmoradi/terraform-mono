@@ -1,10 +1,9 @@
-output "Jenkins-Main-Node-Public-IP" {
-  value = aws_instance.jenkins-master.public_ip
+output "user_1_arn" {
+  value       = aws_iam_user.users[0].arn
+  description = "The ARN for user_1"
 }
 
-output "Jenkins-Worker-Public-IPs" {
-  value = {
-    for instance in aws_instance.jenkins-worker-oregon :
-    instance.id => instance.public_ip
-  }
+output "all_arns" {
+  value       = [for user in aws_iam_user.users : user.arn]
+  description = "The ARNs for all users"
 }

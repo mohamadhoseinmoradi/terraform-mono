@@ -28,3 +28,9 @@ variable "instance_typee" {
 variable "instance_count" {
   type = number
 }
+
+variable "user_names" {
+  description = "Create IAM users with these names"
+  type        = list(string)
+  default     = ["user_1", "user_2", "user_3"]
+}
